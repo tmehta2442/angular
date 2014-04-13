@@ -1,0 +1,1 @@
+Ok, this is just me messing around with angular. Started learning it at work, now stepping back to try to really understand. 
