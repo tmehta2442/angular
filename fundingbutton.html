@@ -1,0 +1,29 @@
+<html ng-app>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		function StartUpController($scope) {
+			$scope.computeNeeded = function () {
+				$scope.needed = $scope.startingEstimate * 10;
+			};
+
+			$scope.requestFunding = function() {
+				window.alert("haha... GTFO");
+			};
+
+			$scope.reset = function() {
+				$scope.startingEstimate = 0;
+			};
+		}
+	</script>
+	<body>
+		<form  ng-controller="StartUpController">
+			starting: <input ng-change="computeNeeded()" 
+											 ng-model="startingEstimate">
+			recommendation: {{needed}}
+			<button ng-click="requestFunding()">Fund it yo!</button>
+			<button ng-click="reset()">Reset</button>
+		</form>
+	</body>
+</head>
+</html>

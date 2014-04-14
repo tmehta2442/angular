@@ -1,0 +1,22 @@
+<!-- ng-app = tells angular which parts of the page it should manage -->
+<html ng-app>
+<head>
+	<title>Your Shopping Cart</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/shopper.js"></script>
+</head>
+<!-- within the body tags, CarController will manage everything within -->
+<body ng-controller="CartController">
+	<h1>Your Order</h1>
+	<!-- ng-repeat = copy the dom for every element in an array called items.  -->
+	<div ng-repeat="item in items">
+		<span>{{item.title}}</span>
+		<input ng-model="item.quantity">
+		<!-- "|" = filters... in this case to format to currency -->
+		<span>{{item.price | currency}}</span>
+		<span>{{item.price * item.quantity | currency}}</span>
+		<button ng-click="remove($index)">Remove</button>
+	</div>
+	
+</body>
+</html>

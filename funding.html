@@ -1,0 +1,24 @@
+<html ng-app>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		function StartUpController($scope) {
+			$scope.funding = { startingEstimate: 2 };
+
+			$scope.computeNeeded = function () {
+				$scope.funding.needed = $scope.funding.startingEstimate * 10;
+			};
+		}
+	</script>
+</head>
+	<body>
+		<!-- the controller -->
+		<form ng-controller="StartUpController">
+			<!-- the funding.startingestimate will show, but not compute -->
+			<!-- ng-change will be invoked once a change happens -->
+			starting: <input ng-change="computeNeeded()"
+											 ng-model="funding.startingEstimate">
+			recommendation : {{funding.needed}}
+		</form>
+	</body>
+</html>

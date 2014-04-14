@@ -1,0 +1,20 @@
+<html ng-app>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script src="js/controllers.js"></script>
+</head>
+<body>
+	<div ng-controller="HelloController">
+		<input ng-model="greeting.text">
+		<p>{{greeting.text}}, World</p>
+		<input ng-model="greeting.yoyo">
+		<p>{{greeting.yoyo}}, you hear me?</p>
+	</div>
+	<div ng-controller="working">
+		<input ng-model="qwerty.asdf">
+		<p>{{qwerty.asdf}}, a third example using a second function</p>
+	</div>
+
+
+</body>
+</html>

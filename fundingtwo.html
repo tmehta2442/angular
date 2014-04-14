@@ -1,0 +1,27 @@
+<!-- update to funding-> what if there is another type of change?
+ $watch() to the rescue -->
+
+<html ng-app>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		function StartUpController($scope) {
+			$scope.funding = { startingEstimate: 0 };
+
+			var computeNeeded = function () {
+				$scope.funding.needed = $scope.funding.startingEstimate * 10;
+			};
+
+			$scope.$watch('funding.startingEstimate', computeNeeded);
+		}
+	</script>
+</head>
+	<body>
+		<form ng-controller="StartUpController">
+			starting: <input ng-model="funding.startingEstimate">
+<!-- 			starting: <input ng-change="computeNeeded()"
+											 ng-model="funding.startingEstimate"> -->
+			recommendation : {{funding.needed}}
+		</form>
+	</body>
+</html>

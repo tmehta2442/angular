@@ -1,0 +1,16 @@
+<html ng-app>
+<body ng-controller="TextController">
+	<p>{{messages.someText}}</p>
+	<h1>{{messages.yayo}}</h1>
+
+	<script src="js/angular.min.js"></script>
+	<script>
+	var messages = {};
+	messages.someText = "Vengence is a dish best served cold.";
+	messages.yayo = "testing, again"
+		function TextController($scope) {
+			$scope.messages = messages;
+		}
+	</script>
+</body>
+</html>
