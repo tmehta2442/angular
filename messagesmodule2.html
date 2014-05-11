@@ -1,0 +1,21 @@
+<html ng-app='bestAppEver'>
+<body ng-controller="TextController">
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		var bestAppEverModule = angular.module('bestAppEver', []);
+
+		bestAppEverModule.controller('TextController', 
+			function($scope) {
+				var someText = {};
+				someText.message = 'Module, eat it';
+				$scope.someText = someText;
+			});
+
+
+	</script>
+</head>
+<p>{{someText.message}}<p>
+</body>
+</html>
+

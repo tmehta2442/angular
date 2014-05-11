@@ -1,0 +1,33 @@
+<html ng-app>
+<body>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		function StartUpController($scope) {
+			$scope.computeNeeded = function() {
+				$scope.needed = $scope.startingEstimate * 10;
+			};
+
+			$scope.requestFunding = function() {
+				window.alert("GTFO");
+			};
+		
+
+			$scope.redoyo = function() {
+				$scope.startingEstimate = 0;
+			}
+		}
+	</script>
+</head>
+
+	<form ng-controller="StartUpController">
+		Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+		Recommendation: {{needed}}
+		<button ng-click="requestFunding()">Fund Here</button>
+		<button ng-click="redoyo()">Reset</button>
+
+	</form>
+
+</body>
+</html>
+

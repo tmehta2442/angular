@@ -1,0 +1,20 @@
+<html ng-app>
+<body>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+		// checked will be true here... big
+		function SomeController($scope){
+			$scope.youCheckedIt = true;
+		}
+
+	</script>
+</head>
+
+	<form ng-controller="SomeController">
+		<input type="checkbox" ng-model="youCheckedIt">
+	</form>
+
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<html ng-app>
+<body ng-controller="TextController">
+<head>
+	<script src="js/angular.min.js"></script>
+	<script>
+
+	var messages = {};
+	messages.someText = 'another way'
+
+	function TextController($scope) {
+		$scope.messages = messages;
+	}
+
+	</script>
+</head>
+<p>{{messages.someText}}<p>
+</body>
+</html>
+
