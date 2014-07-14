@@ -1,0 +1,32 @@
+<html ng-app>
+<body>
+	<head>
+		<style>
+		.menu-disabled-true {
+			color: gray;
+		}
+		.menu-disabled-false {
+			color: red;
+		}
+		</style>
+		<script src="js/angular.min.js"></script>
+		<script>
+			function menuController($scope){
+				$scope.isDisabled = false;
+
+				$scope.stun = function(){
+					$scope.isDisabled = 'true';
+				};
+			}
+		</script>
+	</head>
+
+	<div ng-controller='menuController'>
+		<ul>
+			<li class='menu-disabled-{{isDisabled}}' ng-click='stun()'>Stun</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>

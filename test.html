@@ -1,0 +1,40 @@
+<html ng-app>
+<body>
+	<form ng-submit="requestFunding()" ng-controller="StartUpController">
+		Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate"></br>
+		Recommendation : {{needed}}</br>
+		<button>Fund it yo</button>
+		<button ng-click="reset()">Reset</button>
+	</form>
+
+	
+	<script src="js/angular.min.js"></script>
+	<script>
+	function StartUpController($scope) {
+	
+
+		$scope.computeNeeded = function() {
+			$scope.needed = $scope.startingEstimate * 10;
+		};
+
+		$scope.requestFunding = function () {
+			window.alert("GTFO");
+		};
+
+		$scope.reset = function() {
+			$scope.startingEstimate = 0,
+			$scope.needed = 0;
+		};
+		//$scope.$watch('funding.startingEstimate', computeNeeded);
+		// whatever = function() {
+		// 	$scope.funding.needed = $scope.funding.startingEstimate * 2;
+		// };
+
+		// $scope.$watch('funding.startingEstimate', whatever);
+	}
+
+	</script>
+
+	
+</body>
+</html>
